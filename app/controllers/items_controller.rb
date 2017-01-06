@@ -4,11 +4,9 @@ class ItemsController < ApplicationController
 
   def new
     if params[:q]
-      response = RakutenWebService::Ichiba::Item.search(
-        keyword: params[:q],
-        imageFlag: 1,
-      )
-      @items = response.first(20)
+      q_ary = params[:q].gsub(/\p{blank}+/, ' ').split(' ')
+      params[:q] = q_ary.delete_if{|o| o.size <= 1 }.join(' ')
+      params[:q].size > 1 ? result : (render 'new')
     end
   end
 
@@ -18,5 +16,13 @@ class ItemsController < ApplicationController
   private
   def set_item
     @item = Item.find(params[:id])
+  end
+  
+  def result
+    response = RakutenWebService::Ichiba::Item.search(
+      keyword: params[:q],
+      imageFlag: 1,
+    )
+    @items = response.first(20)
   end
 end
