@@ -1,0 +1,35 @@
+<% items.each_with_index do |item, idx| %>
+  <div class="item-box">
+    <div>
+  <% case idx %>
+  <% when 0 %>
+    <div class="rank_1st">
+    <%= image_tag("rank_1.png", alt: "ランキング1位の画像") %>
+  <% when 1 %>
+    <div class="rank_2nd">
+    <%= image_tag("rank_2.png", alt: "ランキング2位の画像") %>
+  <% when 2 %>
+    <div class="rank_3rd">
+    <%= image_tag("rank_3.png", alt: "ランキング3位の画像") %>
+  <% else %>
+    <div class="rank_normal">
+    <%= image_tag("rank_normal.png", alt: "ランキング3位以降の画像") %>
+  <% end %>
+      <div class="num">
+        <%= idx + 1 %>
+      </div>
+    </div>
+    </div>
+    <div class="image">
+      <div class="img-wrap">
+        <%= image_tag(item.large_image , alt: item.title) %>
+      </div>
+    </div>
+    <div class="detail">
+      <p class="title">
+        <%= item.title %>
+      </p>
+    </div>
+    <%= render 'items/action' , item: item if logged_in? %>
+  </div>
+<% end %>

@@ -4,6 +4,66 @@
   float: left;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   position: relative;
+  .rank_1st {
+    top: 8px;
+    position:	absolute;
+    .num {
+      width:		100%;
+      font-size:	150%;
+      text-align:	center;
+	    color:		#fff;
+	    text-shadow:
+	    1px 1px 1px #999,
+      -1px 1px 1px #999,
+      1px -1px 1px #999,
+      -1px -1px 1px #999;
+    }
+  }
+  .rank_2nd {
+    top: 8px;
+    position:	absolute;
+    .num {
+      width:		100%;
+      font-size:	150%;
+      text-align:	center;
+	    color:		#fff;
+	    text-shadow:
+	    1px 1px 1px #999,
+      -1px 1px 1px #999,
+      1px -1px 1px #999,
+      -1px -1px 1px #999;
+    }
+  }
+  .rank_3rd {
+    top: 8px;
+    position:	absolute;
+    .num {
+      width:		100%;
+      font-size:	150%;
+      text-align:	center;
+	    color:		#fff;
+	    text-shadow:
+	    1px 1px 1px #999,
+      -1px 1px 1px #999,
+      1px -1px 1px #999,
+      -1px -1px 1px #999;
+    }
+  }
+  .rank_normal {
+    top: 8px;
+    position:	absolute;
+    .num {
+      width:		100%;
+      font-size:	150%;
+      text-align:	center;
+	    color:		#fff;
+	    text-shadow:
+	    1px 1px 1px #999,
+      -1px 1px 1px #999,
+      1px -1px 1px #999,
+      -1px -1px 1px #999;
+    }
+  }
   .image {
     width: 270px;
     height: 270px;
